@@ -1,4 +1,4 @@
-import mysql.connector
+import mysql.connector # pip install mysql-connector-python == 8.0.29
 import pandas as pd
 
 db = mysql.connector.connect(
@@ -22,7 +22,6 @@ if db.is_connected:
             "VALUES  (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)")
             cursor.execute(sql, tuple(row))
             print("Record inserted")
-#             # # the connection is not auto committed by default, so we must commit to save our changes
-            db.commit()
+#           db.commit()
 
 db.close()
